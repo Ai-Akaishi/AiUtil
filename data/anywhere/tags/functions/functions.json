@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "util:init/setup/",
+        "util:init/check/"
+    ]
+}

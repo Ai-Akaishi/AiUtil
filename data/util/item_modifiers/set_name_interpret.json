@@ -1,0 +1,9 @@
+{
+	"function": "set_name",
+	"entity": "this",
+	"name": {
+		"nbt": "name",
+		"storage": "util:_",
+		"interpret": true
+	}
+}

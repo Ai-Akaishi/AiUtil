@@ -1,6 +1,9 @@
 {
 	"replace": false,
 	"values": [
-		"util:help/split"
+		"util:help/split",
+		"util:help/datetime",
+		"util:help/init",
+		"util:help/advanced"
 	]
 }
