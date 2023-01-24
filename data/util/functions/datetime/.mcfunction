@@ -16,10 +16,9 @@ scoreboard players operation Offset AiUtil -= _ AiUtil
 scoreboard players set _ AiUtil 20
 scoreboard players operation Offset AiUtil /= _ AiUtil
 ## 現在時刻を取得
-# 2000年1月1日 00:00:00 946652400
 execute store result score Time AiUtil run data get storage util:_ load_time
 scoreboard players operation Time AiUtil += Offset AiUtil
-
+# 2000年1月1日 00:00:00 946652400
 scoreboard players remove Time AiUtil 946652400
 
 scoreboard players set #4 AiUtil 4
