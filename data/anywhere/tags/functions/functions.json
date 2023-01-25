@@ -2,6 +2,8 @@
     "replace": false,
     "values": [
         "util:init/setup/",
-        "util:init/check/"
+        "util:init/check/",
+        "util:datetime/check/setup/",
+        "util:datetime/check/read/"
     ]
 }
