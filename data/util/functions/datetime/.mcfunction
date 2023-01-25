@@ -7,7 +7,7 @@
 ## 1970年1月1日00:00:00 から経過秒数
 
 ## 結果をリセット
-data modify storage util: out set value {year:0,month:0,day:0,hour:0,minute:0,second:0}
+data modify storage util: out set value {year:0,month:0,day:0,hour:0,minute:0,second:0,weekday:0}
 
 ## ワールド読み込みからの経過秒数を取得
 execute store result score Offset AiUtil run time query gametime
@@ -38,6 +38,11 @@ scoreboard players operation Time AiUtil /= #60 AiUtil
 scoreboard players operation _ AiUtil = Time AiUtil
 execute store result storage util: out.hour int 1 run scoreboard players operation _ AiUtil %= #24 AiUtil
 scoreboard players operation Time AiUtil /= #24 AiUtil
+
+scoreboard players operation Day AiUtil = Time AiUtil
+scoreboard players remove Day AiUtil 2
+scoreboard players set _ AiUtil 7
+execute store result storage util: out.weekday int 1 run scoreboard players operation Day AiUtil %= _ AiUtil
 
 #4years
 scoreboard players set _ AiUtil 1461

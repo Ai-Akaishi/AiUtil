@@ -13,7 +13,16 @@ data modify storage sample: data append value "年"
 data modify storage sample: data append string storage util: out.month
 data modify storage sample: data append value "月"
 data modify storage sample: data append string storage util: out.day
-data modify storage sample: data append value "日 "
+data modify storage sample: data append value "日"
+
+execute if data storage util: out{weekday:0} run data modify storage sample: data append value "㈪"
+execute if data storage util: out{weekday:1} run data modify storage sample: data append value "㈫"
+execute if data storage util: out{weekday:2} run data modify storage sample: data append value "㈬"
+execute if data storage util: out{weekday:3} run data modify storage sample: data append value "㈭"
+execute if data storage util: out{weekday:4} run data modify storage sample: data append value "㈮"
+execute if data storage util: out{weekday:5} run data modify storage sample: data append value "㈯"
+execute if data storage util: out{weekday:6} run data modify storage sample: data append value "㈰"
+data modify storage sample: data append value " "
 
 execute store result score _ AiUtil run data get storage util: out.hour
 execute if score _ AiUtil matches ..9 run data modify storage sample: data append value "0"

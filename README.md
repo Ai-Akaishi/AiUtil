@@ -150,12 +150,13 @@ data get storage util: out
 現在の日時を取得します。 / Get the current date and time.  
 シングルモード(LAN非公開の場合)では時刻がずれる可能性があります。 / In single mode (when LAN is not open to the public), the time may be shifted.  
 入力(util: in) : なし(nothing)  
-出力(util: out): 日時データ({year:int,month:int,day:int,hour:int,minute:int,second:int})
+出力(util: out): 日時データ({year:int,month:int,day:int,hour:int,minute:int,second:int,weekday:int})  
+weekday: 0=月曜/Monday, 1=火曜/Tuesday, ... 6:日曜/Sunday
 
 ```nim
 function #util:datetime
 data get storage util: out
--> {year: 2023, month: 1, day: 23, hour: 23, minute: 39, second: 35}
+-> {year: 2023, month: 1, day: 23, hour: 23, minute: 39, second: 35, weekday: 1}
 ```
 
 ## 連絡はこちら / Contact

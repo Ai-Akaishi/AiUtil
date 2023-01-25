@@ -4,7 +4,7 @@
 ### This software is released under the MIT License, see LICENSE.
 
 data modify storage util:_ chunk set value []
-data modify storage util:_ chunk append string storage util:_ load_time64 40 42
+# data modify storage util:_ chunk append string storage util:_ load_time64 40 44
 data modify storage util:_ chunk append string storage util:_ load_time64 36 40
 data modify storage util:_ chunk append string storage util:_ load_time64 32 36
 data modify storage util:_ chunk append string storage util:_ load_time64 28 32
