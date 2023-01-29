@@ -38,6 +38,9 @@ execute store result score _ AiUtil run data get storage util: out.second
 execute if score _ AiUtil matches ..9 run data modify storage sample: data append value "0"
 data modify storage sample: data append string storage util: out.second
 
+# data modify storage util:_ name set value '{"storage":"sample:","nbt":"data[]","separator":"","italic":false}'
+# execute if data entity @s SelectedItem{id:"minecraft:clock"} run item modify entity @s weapon.mainhand util:set_name_interpret
+
 title @s times 0 200 0
 title @s subtitle {"storage":"sample:","nbt":"data[]","separator":""}
 title @s title ""
