@@ -6,6 +6,8 @@
 		"util:help/init",
 		"util:help/advanced",
 		"util:help/resolve",
-		"util:help/entity_id"
+		"util:help/entity_id",
+		"util:help/entity_data",
+		"util:help/spawn"
 	]
 }

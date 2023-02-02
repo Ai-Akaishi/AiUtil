@@ -1,0 +1,9 @@
+#> util:entity_data/help
+# #util:entity_dataのヘルプを表示します。
+### Copyright © 2022 赤石愛
+### This software is released under the MIT License, see LICENSE.
+
+tellraw @s {"translate":" === function #util:%s ===","color":"aqua","with":["entity_data"]}
+tellraw @s "エンティティのnbtを取得します。"
+tellraw @s {"translate":"入力%1$s: %2$s%3$s","with":[{"text":"(util: in)  ","color":"gray"},{"text":"なし","bold":true},{"text":"(nothing)","color":"gray"}]}
+tellraw @s {"translate":"出力%1$s: %2$s%3$s","with":[{"text":"(util: out)","color":"gray"},{"text":"entity data","bold":true},{"text":"(nbt)","color":"gray"}]}

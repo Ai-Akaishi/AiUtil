@@ -114,6 +114,8 @@ function #util:advanced/off
 3. [split](#split)
 4. [resolve](#resolve)
 5. [entity_id](#entity_id)
+6. [entity_data](#entity_data)
+7. [summon](#summon)
 
 ### init
 
@@ -164,7 +166,9 @@ data get storage util: out
 
 ### resolve
 
-文字を分割します。 / Split a string to chars.  
+RawJsonコンポーネントをresolveします。  
+エンティティを使用しているので、プレイヤーのいる場所からなど  
+読み込まれているチャンクから呼び出してください。  
 入力(util: in) : JSON component(string)  
 出力(util: out): Resolved JSON component(string)
 
@@ -177,6 +181,9 @@ data get storage util: out
 
 ### entity_id
 
+エンティティのIDを取得します。  
+エンティティを使用しているので、プレイヤーのいる場所からなど  
+読み込まれているチャンクから呼び出してください。  
 入力(util: in) : なし(nothing)  
 出力(util: out): entity ID(string)  
 
@@ -184,6 +191,32 @@ data get storage util: out
 function #util:entity_id
 data get storage util: out
 -> "minecraft:armor_stand"
+```
+
+### entity_data
+
+エンティティのIDを取得します。  
+エンティティを使用しているので、プレイヤーのいる場所からなど  
+読み込まれているチャンクから呼び出してください。  
+入力(util: in) : なし(nothing)  
+出力(util: out): entity data(nbt)  
+
+```nim
+function #util:entity_data
+data get storage util: out
+-> {Motion: [0.0d, 0.0d, 0.0d], Facing: 1b, Invulnerable: 0b, Air: 300s, OnGround: 0b, PortalCooldown: 0, FallDistance: 0.0f, Passengers: [{Motion: [0.0d, -0.029999999329447746d, 0.0d], Owner: [I; -1162359358, -155564042, -1197870534, -584156033], Invulnerable: 0b, LeftOwner: 1b, Air: 300s, OnGround: 0b, PortalCooldown: 0, Rotation: [-4.8231647E-32f, -2.3410684E-32f], FallDistance: 0.0f, Pos: [23.5d, 67.40625d, -30.5d], HasBeenShot: 1b, Fire: -1s, id: "minecraft:snowball"}], Fire: -1s, TileY: 67, TileX: 23, Invisible: 0b, id: "minecraft:item_frame", TileZ: -31, Fixed: 0b}
+```
+
+### spawn
+
+指定されたデータをもとにエンティティを召喚します。  
+入力(util: in) : entity data(nbt)  
+出力(util: out): なし(nothing)  
+
+```nim
+data modify storage util: in set value {Motion: [0.0d, 0.0d, 0.0d], Facing: 1b, Invulnerable: 0b, Air: 300s, OnGround: 0b, PortalCooldown: 0, FallDistance: 0.0f, Passengers: [{Motion: [0.0d, -0.029999999329447746d, 0.0d], Owner: [I; -1162359358, -155564042, -1197870534, -584156033], Invulnerable: 0b, LeftOwner: 1b, Air: 300s, OnGround: 0b, PortalCooldown: 0, Rotation: [-4.8231647E-32f, -2.3410684E-32f], FallDistance: 0.0f, Pos: [23.5d, 67.40625d, -30.5d], HasBeenShot: 1b, Fire: -1s, id: "minecraft:snowball"}], Fire: -1s, TileY: 67, TileX: 23, Invisible: 0b, id: "minecraft:item_frame", TileZ: -31, Fixed: 0b}
+function #util:spawn
+-> 指定のエンティティが召喚される / the specified entity spawned.
 ```
 
 ## 連絡はこちら / Contact
