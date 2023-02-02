@@ -6,5 +6,3 @@
 ### スポナーにデータを入れる
 data modify entity @s {} merge from storage util:_ SpawnerData
 tag @s remove AiUtilSpawnerInit
-
-say spawn
