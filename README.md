@@ -112,6 +112,8 @@ function #util:advanced/off
 1. [init(function tag)★](#init)
 2. [datetime★](#datetime)
 3. [split](#split)
+4. [resolve](#resolve)
+5. [entity_id](#entity_id)
 
 ### init
 
@@ -158,6 +160,30 @@ weekday: 0=月曜/Monday, 1=火曜/Tuesday, ... 6:日曜/Sunday
 function #util:datetime
 data get storage util: out
 -> {year: 2023, month: 1, day: 23, hour: 23, minute: 39, second: 35, weekday: 1}
+```
+
+### resolve
+
+文字を分割します。 / Split a string to chars.  
+入力(util: in) : JSON component(string)  
+出力(util: out): Resolved JSON component(string)
+
+```nim
+data modify storage util: in set value '{"selector":"@s"}'
+function #util:resolve
+data get storage util: out
+-> '{"insertion":"1a62fb69-9c5a-42e9-87b5-b94eaf19403a","hoverEvent":{"action":"show_entity","contents":{"type":"minecraft:armor_stand","id":"1a62fb69-9c5a-42e9-87b5-b94eaf19403a","name":{"translate":"entity.minecraft.armor_stand"}}},"translate":"entity.minecraft.armor_stand"}'
+```
+
+### entity_id
+
+入力(util: in) : なし(nothing)  
+出力(util: out): entity ID(string)  
+
+```nim
+function #util:entity_id
+data get storage util: out
+-> "minecraft:armor_stand"
 ```
 
 ## 連絡はこちら / Contact

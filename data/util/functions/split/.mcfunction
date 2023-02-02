@@ -12,6 +12,8 @@ data modify storage util: out set value []
 data modify storage util:_ str.all set string storage util: in
 execute store result score _ AiUtil run data get storage util:_ str.all
 
+execute if score _ AiUtil matches 1024.. run function util:split/start/1024
+execute if score _ AiUtil matches 512.. run function util:split/start/512
 execute if score _ AiUtil matches 256.. run function util:split/start/256
 execute if score _ AiUtil matches 128.. run function util:split/start/128
 execute if score _ AiUtil matches 64.. run function util:split/start/64

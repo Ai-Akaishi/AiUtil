@@ -4,6 +4,8 @@
 		"util:help/split",
 		"util:help/datetime",
 		"util:help/init",
-		"util:help/advanced"
+		"util:help/advanced",
+		"util:help/resolve",
+		"util:help/entity_id"
 	]
 }
