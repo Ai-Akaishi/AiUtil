@@ -12,3 +12,5 @@ function #util:resolve
 ## エンティティIDは11文字～ 35文字想定
 data modify storage util: in set string storage util: out 109 144
 function util:entity_id/11
+
+execute if entity @s[type=player] run data modify storage util: out set value "minecraft:player"
