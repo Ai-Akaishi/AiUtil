@@ -8,6 +8,7 @@
 		"util:help/resolve",
 		"util:help/entity_id",
 		"util:help/entity_data",
-		"util:help/spawn"
+		"util:help/spawn",
+		"util:help/xp"
 	]
 }

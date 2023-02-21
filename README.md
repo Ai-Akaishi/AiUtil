@@ -115,7 +115,8 @@ function #util:advanced/off
 4. [resolve](#resolve)
 5. [entity_id](#entity_id)
 6. [entity_data](#entity_data)
-7. [summon](#summon)
+7. [spawn](#spawn)
+8. [xp](#xp)
 
 ### init
 
@@ -217,6 +218,18 @@ data get storage util: out
 data modify storage util: in set value {Motion: [0.0d, 0.0d, 0.0d], Facing: 1b, Invulnerable: 0b, Air: 300s, OnGround: 0b, PortalCooldown: 0, FallDistance: 0.0f, Passengers: [{Motion: [0.0d, -0.029999999329447746d, 0.0d], Owner: [I; -1162359358, -155564042, -1197870534, -584156033], Invulnerable: 0b, LeftOwner: 1b, Air: 300s, OnGround: 0b, PortalCooldown: 0, Rotation: [-4.8231647E-32f, -2.3410684E-32f], FallDistance: 0.0f, Pos: [23.5d, 67.40625d, -30.5d], HasBeenShot: 1b, Fire: -1s, id: "minecraft:snowball"}], Fire: -1s, TileY: 67, TileX: 23, Invisible: 0b, id: "minecraft:item_frame", TileZ: -31, Fixed: 0b}
 function #util:spawn
 -> 指定のエンティティが召喚される / the specified entity spawned.
+```
+
+### xp
+
+経験値を百分率(%)で設定します。  
+入力(util: in) : 百分率/percentage(int)  
+出力(util: out): なし(nothing)  
+
+```nim
+data modify storage util: in set value 87
+function #util:xp
+-> 経験値バーが次のレベルアップまでの87%になる / The experience bar will be 87% until the next level up.
 ```
 
 ## 連絡はこちら / Contact
