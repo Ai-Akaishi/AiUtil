@@ -9,6 +9,8 @@
 		"util:help/entity_id",
 		"util:help/entity_data",
 		"util:help/spawn",
-		"util:help/xp"
+		"util:help/xp",
+		"util:help/block_states",
+		"util:help/display"
 	]
 }

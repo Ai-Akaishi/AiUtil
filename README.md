@@ -117,6 +117,8 @@ function #util:advanced/off
 6. [entity_data](#entity_data)
 7. [spawn](#spawn)
 8. [xp](#xp)
+9. [block_states](#block_states)
+10. [display](#display)
 
 ### init
 
@@ -230,6 +232,40 @@ function #util:spawn
 data modify storage util: in set value 87
 function #util:xp
 -> 経験値バーが次のレベルアップまでの87%になる / The experience bar will be 87% until the next level up.
+```
+
+### block_states
+
+指定された範囲のblock_stateを取得します。  
+エンティティを使用しているので、プレイヤーのいる場所からなど  
+読み込まれているチャンクから呼び出してください。  
+入力(util: in) : range({x:int,y,int,z:int})  
+出力(util: out): block_states([[[{Name:string,Properties:{}},...],...],...])  
+
+```nim
+data modify storage util: in set value {x:15,y:10,z:12}
+function #util:block_states
+data get storage util: out
+-> [[[{Properties: {eye: "false", east: "true", half: "bottom", shape: "straight", south: "false", north: "true", west: "true", facing: "south", axis: "y", snowy: "false"}, Name: "minecraft:andesite"}, {Properties: {eye: "false", east: "true", half: "bottom", shape: "straight", south: "false", north: "true", west: "true", facing: "south", axis: "y", snowy: "false"}, Name: "minecraft:granite"}, ...
+```
+
+### display
+
+指定されたデータをもとにブロックディスプレイを召喚します。  
+エンティティを使用しているので、プレイヤーのいる場所からなど  
+読み込まれているチャンクから呼び出してください。  
+入力(util: in) : display data({scale:float,tag:string,block_states:[[[{Name:string,Properties:{}},...],...],...])  
+出力(util: out): なし(nothing)  
+
+```nim
+data modify storage util: in set value {x:15,y:10,z:12}
+function #util:block_states
+
+data modify storage util: in set value {scale: 0.0625f, tag: "Miniature"}
+data modify storage util: in.block_states set from storage util: out
+
+function #util:display
+-> ブロックディスプレイが表示される / the specified block_displays spawned.
 ```
 
 ## 連絡はこちら / Contact
