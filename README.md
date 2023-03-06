@@ -255,7 +255,7 @@ data get storage util: out
 指定されたデータをもとにブロックディスプレイを召喚します。  
 エンティティを使用しているので、プレイヤーのいる場所からなど  
 読み込まれているチャンクから呼び出してください。  
-入力(util: in) : display data({scale:float,tag:string,block_states:[[[{Name:string,Properties:{}},...],...],...])  
+入力(util: in) : display data({scale:float, tag:string|{...}, block_states:[[[{Name:string,Properties:{}},...],...],...])  
 出力(util: out): なし(nothing)  
 
 ```nim
