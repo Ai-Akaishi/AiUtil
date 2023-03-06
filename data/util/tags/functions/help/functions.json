@@ -11,6 +11,7 @@
 		"util:help/spawn",
 		"util:help/xp",
 		"util:help/block_states",
-		"util:help/display"
+		"util:help/display",
+		"util:help/pass_through"
 	]
 }

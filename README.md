@@ -119,6 +119,7 @@ function #util:advanced/off
 8. [xp](#xp)
 9. [block_states](#block_states)
 10. [display](#display)
+11. [pass_through](#pass_through)
 
 ### init
 
@@ -266,6 +267,19 @@ data modify storage util: in.block_states set from storage util: out
 
 function #util:display
 -> ブロックディスプレイが表示される / the specified block_displays spawned.
+```
+
+### pass_through
+
+通過領域の移動方向を求めます。(リストの後ろが先頭です。) / Finds the move directions of the pass-through area. (The end of the list is the beginning.)  
+入力(util: in) : 移動ブロック数(int)  
+出力(util: out): 移動方向のリスト([string,...])
+
+```nim
+data modify storage util: in set value 10
+execute anchored eyes positioned ^ ^ ^ run function #util:pass_through
+data get storage util: out
+-> ["-Y", "-Z", "+X", "-Y", "-Z", "-Y", "+X", "-Z", "-Z", "-Y"]
 ```
 
 ## 連絡はこちら / Contact
