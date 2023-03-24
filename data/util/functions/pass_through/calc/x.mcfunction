@@ -2,8 +2,8 @@
 ### Copyright © 2023 赤石愛
 ### This software is released under the MIT License, see LICENSE.
 
-scoreboard players operation Y AiUtil -= X AiUtil
-scoreboard players operation Z AiUtil -= X AiUtil
+execute unless data storage util:_ direction{Y:0} run scoreboard players operation Y AiUtil -= X AiUtil
+execute unless data storage util:_ direction{Z:0} run scoreboard players operation Z AiUtil -= X AiUtil
 scoreboard players operation X AiUtil = DX AiUtil
 
 ## 移動方向を保存

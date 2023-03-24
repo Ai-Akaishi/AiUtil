@@ -41,13 +41,22 @@ execute if data storage util:_ signs{Z:1} store result score Z AiUtil run data g
 scoreboard players operation Z AiUtil %= _ AiUtil
 
 ## 追いかけっこの１つ分
+## 0の要素は∞扱いにする
+## 掛け算するときは1扱い
 execute store result score _ AiUtil run data get storage util:_ direction.Z
+execute if data storage util:_ direction{Z:0} run scoreboard players set _ AiUtil 1
 execute store result score DX AiUtil run data get storage util:_ direction.Y
+execute if data storage util:_ direction{Y:0} run scoreboard players set DX AiUtil 1
 scoreboard players operation DX AiUtil *= _ AiUtil
+
 execute store result score DY AiUtil run data get storage util:_ direction.X
+execute if data storage util:_ direction{X:0} run scoreboard players set DY AiUtil 1
 scoreboard players operation DY AiUtil *= _ AiUtil
+
 execute store result score DZ AiUtil run data get storage util:_ direction.X
+execute if data storage util:_ direction{X:0} run scoreboard players set DZ AiUtil 1
 execute store result score _ AiUtil run data get storage util:_ direction.Y
+execute if data storage util:_ direction{Y:0} run scoreboard players set _ AiUtil 1
 scoreboard players operation DZ AiUtil *= _ AiUtil
 
 ## 追いかけっこの現在地を設定
@@ -61,6 +70,7 @@ scoreboard players operation D1 AiUtil *= X AiUtil
 scoreboard players operation D2 AiUtil *= X AiUtil
 scoreboard players operation D2 AiUtil /= _ AiUtil
 execute store result score X AiUtil run scoreboard players operation D1 AiUtil += D2 AiUtil
+execute if data storage util:_ direction{X:0} run scoreboard players set X AiUtil 2147483647
 # Y
 scoreboard players operation D1 AiUtil = DY AiUtil
 scoreboard players operation D1 AiUtil /= _ AiUtil
@@ -70,6 +80,7 @@ scoreboard players operation D1 AiUtil *= Y AiUtil
 scoreboard players operation D2 AiUtil *= Y AiUtil
 scoreboard players operation D2 AiUtil /= _ AiUtil
 execute store result score Y AiUtil run scoreboard players operation D1 AiUtil += D2 AiUtil
+execute if data storage util:_ direction{Y:0} run scoreboard players set Y AiUtil 2147483647
 # Z
 scoreboard players operation D1 AiUtil = DZ AiUtil
 scoreboard players operation D1 AiUtil /= _ AiUtil
@@ -79,6 +90,7 @@ scoreboard players operation D1 AiUtil *= Z AiUtil
 scoreboard players operation D2 AiUtil *= Z AiUtil
 scoreboard players operation D2 AiUtil /= _ AiUtil
 execute store result score Z AiUtil run scoreboard players operation D1 AiUtil += D2 AiUtil
+execute if data storage util:_ direction{Z:0} run scoreboard players set Z AiUtil 2147483647
 
 ## 求める量を保存しておく
 data modify storage util:_ count set from storage util: in
