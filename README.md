@@ -5,7 +5,7 @@ Ai Akaishi's Utils Library Datapack
 
 ## 動作確認済みバージョン / Verified minecraft versions
 
-- 1.19.4 (snapshot 23w03a)
+- 1.19.4
 
 ## 一緒に入れてね / Dependencies
 
@@ -120,6 +120,7 @@ function #util:advanced/off
 9. [block_states](#block_states)
 10. [display](#display)
 11. [pass_through](#pass_through)
+12. [distance](#distance)
 
 ### init
 
@@ -280,6 +281,19 @@ data modify storage util: in set value 10
 execute anchored eyes positioned ^ ^ ^ run function #util:pass_through
 data get storage util: out
 -> ["-Y", "-Z", "+X", "-Y", "-Z", "-Y", "+X", "-Z", "-Z", "-Y"]
+```
+
+### distance
+
+実行地点と実行者の距離を求めます。単位はmです。方角によって誤差が生じることがあります。  
+Gets the distance between the execution point and the executor. The unit is m. There may be some errors depending on the direction.
+入力(util: in) : なし(nothing)
+出力(util: out): 距離(double) => storage util: out
+
+```mcfunction
+execute as @p at 0.0 0.0 0.0 run function #util:distance  
+data get storage util: out  
+# => 5381.27d  
 ```
 
 ## 連絡はこちら / Contact

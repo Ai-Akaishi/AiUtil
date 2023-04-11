@@ -12,6 +12,7 @@
 		"util:help/xp",
 		"util:help/block_states",
 		"util:help/display",
-		"util:help/pass_through"
+		"util:help/pass_through",
+		"util:help/distance"
 	]
 }

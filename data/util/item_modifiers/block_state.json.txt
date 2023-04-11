@@ -1,0 +1,75 @@
+[
+    {
+        "function": "minecraft:set_nbt",
+        "conditions": [
+            {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                    "block": {
+                        "blocks": [
+                            "minecraft:air"
+                        ]
+                    }
+                }
+            }
+        ],
+        "tag": "{Name:\"minecraft:air\"}"
+    },
+    {
+        "function": "minecraft:set_nbt",
+        "conditions": [
+            {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                    "block": {
+                        "blocks": [
+                            "minecraft:acacia_log"
+                        ],
+                        "state": {
+                            "axis": "x"
+                        }
+                    }
+                }
+            }
+        ],
+        "tag": "{Name:\"minecraft:acacia_log\",Properties:{\"axis\":\"x\"}}"
+    },
+    {
+        "function": "minecraft:set_nbt",
+        "conditions": [
+            {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                    "block": {
+                        "blocks": [
+                            "minecraft:acacia_log"
+                        ],
+                        "state": {
+                            "axis": "y"
+                        }
+                    }
+                }
+            }
+        ],
+        "tag": "{Name:\"minecraft:acacia_log\",Properties:{\"axis\":\"y\"}}"
+    },
+    {
+        "function": "minecraft:set_nbt",
+        "conditions": [
+            {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                    "block": {
+                        "blocks": [
+                            "minecraft:acacia_log"
+                        ],
+                        "state": {
+                            "axis": "z"
+                        }
+                    }
+                }
+            }
+        ],
+        "tag": "{Name:\"minecraft:acacia_log\",Properties:{\"axis\":\"z\"}}"
+    }
+]
