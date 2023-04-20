@@ -149,19 +149,6 @@ util/tags/functions/init.json
 }
 ```
 
-### split
-
-文字を分割します。 / Split a string to chars.  
-入力(util: in) : 文字列(string)  
-出力(util: out): 文字リスト([string,...])
-
-```nim
-data modify storage util: in set value "赤石愛のほうそうきょく"
-function #util:split
-data get storage util: out
--> ["赤", "石", "愛", "の", "ほ", "う", "そ", "う", "き", "ょ", "く"]
-```
-
 ### datetime
 
 現在の日時を取得します。 / Get the current date and time.  
@@ -175,6 +162,19 @@ weekday: 0=月曜/Monday, 1=火曜/Tuesday, ... 6:日曜/Sunday
 function #util:datetime
 data get storage util: out
 -> {year: 2023, month: 1, day: 23, hour: 23, minute: 39, second: 35, weekday: 1}
+```
+
+### split
+
+文字を分割します。 / Split a string to chars.  
+入力(util: in) : 文字列(string)  
+出力(util: out): 文字リスト([string,...])
+
+```nim
+data modify storage util: in set value "赤石愛のほうそうきょく"
+function #util:split
+data get storage util: out
+-> ["赤", "石", "愛", "の", "ほ", "う", "そ", "う", "き", "ょ", "く"]
 ```
 
 ### resolve
@@ -208,7 +208,7 @@ data get storage util: out
 
 ### entity_data
 
-エンティティのIDを取得します。  
+エンティティのNBT dataを取得します。  
 エンティティを使用しているので、プレイヤーのいる場所からなど  
 読み込まれているチャンクから呼び出してください。  
 入力(util: in) : なし(nothing)  
