@@ -104,6 +104,13 @@ If you want to disable the Advanced Function, run the following command.
 function #util:advanced/off
 ```
 
+## お助け機能 / Helper feature
+
+一部の関数では簡単に利用するためのお助け機能があります。  
+詳しくはそれぞれの項目を参照してください。  
+Some functions have a helper feature for easy use.  
+Please refer to the respective sections for details.
+
 ## 現在標準で対応している関数一覧 / Default Supported Functions
 
 ★:Advanced関数です。Advanced機能が有効化されていないと正常に動きません。  
@@ -121,6 +128,7 @@ function #util:advanced/off
 10. [display](#display)
 11. [pass_through](#pass_through)
 12. [distance](#distance)
+13. [no_exp](#no_exp)
 
 ### init
 
@@ -286,14 +294,46 @@ data get storage util: out
 ### distance
 
 実行地点と実行者の距離を求めます。単位はmです。方角によって誤差が生じることがあります。  
-Gets the distance between the execution point and the executor. The unit is m. There may be some errors depending on the direction.
-入力(util: in) : なし(nothing)
-出力(util: out): 距離(double) => storage util: out
+Gets the distance between the execution point and the executor. The unit is m. There may be some errors depending on the direction.  
+入力(util: in) : なし(nothing)  
+出力(util: out): 距離(double) => storage util: out  
 
 ```mcfunction
 execute as @p at 0.0 0.0 0.0 run function #util:distance  
 data get storage util: out  
 # => 5381.27d  
+```
+
+### no_exp
+
+エンティティの経験値ドロップを無効化します。アイテムのドロップもなくなります。  
+The entity's experience drop will be suppressed. This will also eliminate item drops.  
+入力(util: in) : なし(nothing)  
+出力(util: out): なし(nothing)  
+
+```mcfunction
+# 経験値ドロップをなくしたいエンティティに実行させてください。  
+# execute as an entity that you want to eliminate experience drops.  
+execute as @e[tag=Mob] at @s run function #util:no_exp  
+```
+
+#### no_expのお助け機能
+
+NoExpのタグを与えるだけで経験値ドロップがなくなるようにできます。
+
+```mcfunction
+# 実行すると有効になります。  
+# The feature will be enabled by running the below.  
+function #util:no_exp/helper/on  
+  
+# 実行すると再度有効にするまで無効になります。  
+# The feature will be disabled by running the below.  
+function #util:no_exp/helper/off  
+  
+# 有効な状態ではNoExpタグがついたMobの経験値ドロップを自動的になくします。  
+# Under the enabled condition, experience drops for mobs tagged with NoExp are automatically eliminated.  
+execute summon husk run tag @s add NoExp  
+# => 召喚されたhuskは何もドロップしない / The summoned husk does not drop anything.  
 ```
 
 ## 連絡はこちら / Contact
