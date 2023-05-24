@@ -7,4 +7,4 @@
 execute if score Day AiUtil matches 30.. run scoreboard players add Month AiUtil 1
 execute if score Day AiUtil matches 30.. run scoreboard players remove Day AiUtil 30
 # 5月以上なら5月チェック
-execute if score Month AiUtil matches 5.. run function util:datetime/month/3
+execute if score Month AiUtil matches 5.. run function util:datetime/month/5
