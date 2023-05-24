@@ -1,6 +1,10 @@
 [
     {
         "function": "minecraft:set_nbt",
+        "tag": "{Name:\"\",Properties:\"\"}"
+    },
+    {
+        "function": "minecraft:set_nbt",
         "conditions": [
             {
                 "condition": "minecraft:location_check",
