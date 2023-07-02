@@ -129,6 +129,7 @@ Please refer to the respective sections for details.
 11. [pass_through](#pass_through)
 12. [distance](#distance)
 13. [no_exp](#no_exp)
+14. [durability](#durability)
 
 ### init
 
@@ -319,7 +320,8 @@ execute as @e[tag=Mob] at @s run function #util:no_exp
 
 #### no_expのお助け機能
 
-NoExpのタグを与えるだけで経験値ドロップがなくなるようにできます。
+NoExpのタグを与えるだけで経験値ドロップがなくなるようにできます。  
+You can make the experience drop disappear by simply giving mobs a NoExp tag.  
 
 ```mcfunction
 # 実行すると有効になります。  
@@ -334,6 +336,42 @@ function #util:no_exp/helper/off
 # Under the enabled condition, experience drops for mobs tagged with NoExp are automatically eliminated.  
 execute summon husk run tag @s add NoExp  
 # => 召喚されたhuskは何もドロップしない / The summoned husk does not drop anything.  
+```
+
+### durability
+
+アイテムの耐久値を割合で変更します。  
+スロット指定がない場合はメインハンドに適用します。  
+It changes the durability value of an item by a percentage.  
+If the slot is not specified, it is applied to the mainhand.
+入力(util: in) : slot and rate({slot:byte,rate:float})  
+出力(util: out): なし(nothing)  
+
+```mcfunction
+data modify storage util: in set value {slot:103b,rate:0.25f}  
+execute as @p run function #util:durability  
+# => 一番近くのプレイヤーの頭装備の耐久値が残り25%になります。  
+# The nearest player's head equipment has 25% durability value remaining.
+```
+
+#### durabilityのお助け機能
+
+プレイヤーのDurabilityスコアに0~100を設定するだけでメインハンドのアイテムの耐久値を変更できます。
+
+```mcfunction
+# 実行すると有効になります。  
+# The feature will be enabled by running the below.  
+function #util:durability/helper/on  
+  
+# 実行すると再度有効にするまで無効になります。  
+# The feature will be disabled by running the below.  
+function #util:durability/helper/off  
+  
+# Durabilityスコアに数値を設定するとメインハンドのアイテムの耐久値がその数値に応じた割合になります。  
+# If you set a numerical value for a player's Durability score, the durability value of the item in the mainhand will be a percentage of that value.  
+scoreboard players set @p Durability 30  
+# => 一番近くのプレイヤーのメインハンドのアイテムの耐久値が残り30%になる
+# The durability value of the item in the nearest player's mainhand is set to 30% remaining.  
 ```
 
 ## 連絡はこちら / Contact
