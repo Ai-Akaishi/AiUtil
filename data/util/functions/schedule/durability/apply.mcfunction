@@ -5,4 +5,4 @@
 data modify storage util: in set value {rate:1f}
 execute store result storage util: in.rate float 0.01 run scoreboard players get @s Durability
 function #util:durability
-scoreboard players reset @s Duralibity
+scoreboard players reset @s Durability
