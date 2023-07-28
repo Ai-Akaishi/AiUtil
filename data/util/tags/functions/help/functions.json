@@ -15,6 +15,7 @@
 		"util:help/pass_through",
 		"util:help/distance",
 		"util:help/no_exp",
-		"util:help/durability"
+		"util:help/durability",
+		"util:help/type"
 	]
 }

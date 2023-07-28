@@ -6,6 +6,7 @@ Ai Akaishi's Utils Library Datapack
 ## 動作確認済みバージョン / Verified minecraft versions
 
 - 1.19.4
+- 1.20.1
 
 ## 一緒に入れてね / Dependencies
 
@@ -17,6 +18,9 @@ Anywhere Function(<https://github.com/Ai-Akaishi/AnywhereFunction>)
 2. [関数の上書き / Override functions](#関数の上書き--override-functions)
 3. [関数の追加 / Add functions](#関数の追加--add-functions)
 4. [Advanced関数 / What are the Advanced Functions?](#advanced関数--what-are-the-advanced-functions)
+5. [お助け機能 / Helper feature](#お助け機能--helper-feature)
+
+[現在標準で対応している関数一覧 / Default Supported Functions](#現在標準で対応している関数一覧--default-supported-functions)
 
 ### 基本 / Basics
 
@@ -104,7 +108,7 @@ If you want to disable the Advanced Function, run the following command.
 function #util:advanced/off
 ```
 
-## お助け機能 / Helper feature
+### お助け機能 / Helper feature
 
 一部の関数では簡単に利用するためのお助け機能があります。  
 詳しくはそれぞれの項目を参照してください。  
@@ -130,6 +134,7 @@ Please refer to the respective sections for details.
 12. [distance](#distance)
 13. [no_exp](#no_exp)
 14. [durability](#durability)
+15. [type](#type)
 
 ### init
 
@@ -372,6 +377,23 @@ function #util:durability/helper/off
 scoreboard players set @p Durability 30  
 # => 一番近くのプレイヤーのメインハンドのアイテムの耐久値が残り30%になる
 # The durability value of the item in the nearest player's mainhand is set to 30% remaining.  
+```
+
+### type
+
+入力データの型を取得します。  
+Gets the type of input.  
+入力(util: in) : 入力データ(any)  
+出力(util: out): 型名(string)  
+  
+以下の名前で返ります。 / Return one of the following list.  
+byte, short, int, long, float, double, string, list, compound, byte_array, int_array, long_array, or unknown  
+
+```mcfunction
+data modify storage util: in set value 1234567L  
+function #util:type  
+data get storage util: out  
+# => "long"  
 ```
 
 ## 連絡はこちら / Contact
