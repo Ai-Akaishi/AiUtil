@@ -6,10 +6,9 @@
 ### This software is released under the MIT License, see LICENSE.
 
 ### 結果を入れるスコアを０にしておく
-scoreboard objectives add AiMath dummy
-scoreboard players set _ AiMath 0
+scoreboard players set _ AiUtil 0
 
 ### ほんのちょっぴり離れておく(ぴったりの時用)
 execute facing entity @s feet positioned ^ ^ ^-0.00000001 run function util:distance/23
 
-execute store result storage util: out double 0.01 run scoreboard players get _ AiMath
+execute store result storage util: out double 0.01 run scoreboard players get _ AiUtil
