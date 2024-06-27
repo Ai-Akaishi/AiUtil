@@ -5,6 +5,11 @@ Ai Akaishi's Utils Library Datapack
 
 ## 動作確認済みバージョン / Verified minecraft versions
 
+- 1.20.3
+
+以下のバージョンは右のReleasesからどうぞ。  
+For the following versions, please check Releases on the right.
+
 - 1.19.4
 - 1.20.1
 
